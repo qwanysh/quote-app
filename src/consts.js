@@ -1,5 +1,6 @@
 export const categories = [
   {id: 'humour', name: 'Humour'},
-  {id: 'saying', name: 'Saying'},
-  {id: 'motivational', name: 'Motivational'},
+  {id: 'love', name: 'Love'},
+  {id: 'motivation', name: 'Motivation'},
+  {id: 'life', name: 'Life'},
 ];
