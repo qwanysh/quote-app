@@ -1,11 +1,11 @@
 import React, {useEffect, useState} from 'react';
 import {Heading, Pane, Spinner} from 'evergreen-ui';
 import CategoryList from '../../components/CategoryList/CategoryList';
-import QuoteCard from '../../components/QuoteCard/QuoteCard';
 import {getQuotes} from '../../helpers';
 import {categories} from '../../consts';
+import QuoteList from '../../components/QuoteList/QuoteList';
 
-const QuoteList = props => {
+const Quotes = props => {
   const [spinner, setSpinner] = useState(false);
   const [quotes, setQuotes] = useState([]);
   const [category, setCategory] = useState(null);
@@ -33,12 +33,10 @@ const QuoteList = props => {
         <CategoryList/>
         <Pane padding={10} flexGrow={1}>
           <Heading marginBottom={10}>{category ? category.name : 'All'}</Heading>
-          {spinner ? <Spinner size={40} marginX="auto"/> : quotes.map(quote => (
-              <QuoteCard key={quote.id} quote={quote}/>
-          ))}
+          {spinner ? <Spinner size={40} marginX="auto"/> : <QuoteList quotes={quotes}/>}
         </Pane>
       </Pane>
   );
 };
 
-export default QuoteList;
+export default Quotes;
