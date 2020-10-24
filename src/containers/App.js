@@ -13,7 +13,9 @@ const App = () => {
           <Navbar/>
           <Switch>
             <Route path="/" exact component={QuoteList}/>
-            <Route path="/add-quote" exact component={QuoteCreate}/>
+            <Route path="/add-quote" exact render={props => (
+                <QuoteCreate {...props}/>
+            )}/>
           </Switch>
         </Pane>
       </BrowserRouter>
