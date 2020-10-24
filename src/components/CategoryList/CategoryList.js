@@ -13,7 +13,11 @@ const CategoryList = () => {
           <Menu.Divider/>
           <Menu.Group>
             {categories.map(category => (
-                <Menu.Item key={category.id}>{category.name}</Menu.Item>
+                <Menu.Item
+                    key={category.id}
+                    is={Link}
+                    to={`/quotes/${category.id}`}
+                >{category.name}</Menu.Item>
             ))}
           </Menu.Group>
         </Menu>

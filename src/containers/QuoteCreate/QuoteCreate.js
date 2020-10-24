@@ -33,6 +33,7 @@ const QuoteCreate = ({history}) => {
         <SelectField
             label="Category"
             defaultValue={quote.category}
+            name="category"
             onChange={changeHandler}
         >
           {categories.map(category => (

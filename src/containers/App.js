@@ -12,7 +12,12 @@ const App = () => {
         <Pane maxWidth={640} paddingX={20} marginX="auto">
           <Navbar/>
           <Switch>
-            <Route path="/" exact component={QuoteList}/>
+            <Route path="/" exact render={props => (
+                <QuoteList {...props}/>
+            )}/>
+            <Route path="/quotes/:categoryId" exact render={props => (
+                <QuoteList {...props}/>
+            )}/>
             <Route path="/add-quote" exact render={props => (
                 <QuoteCreate {...props}/>
             )}/>
