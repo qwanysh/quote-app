@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {Button, Pane, SelectField, TextareaField, TextInputField, toaster} from 'evergreen-ui';
+import {Button, Heading, Pane, SelectField, TextareaField, TextInputField, toaster} from 'evergreen-ui';
 import {categories} from '../../consts';
 import {getQuoteDetails, isValid, updateQuote} from '../../helpers';
 import {Link} from 'react-router-dom';
@@ -37,6 +37,7 @@ const QuoteEdit = props => {
 
   return (
       <Pane paddingY={40} display="flex" flexDirection="column">
+        <Heading marginBottom={10}>Edit Quote</Heading>
         <SelectField
             label="Category"
             value={quote.category}

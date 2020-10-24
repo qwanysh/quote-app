@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Button, Pane, SelectField, TextareaField, TextInputField, toaster} from 'evergreen-ui';
+import {Button, Heading, Pane, SelectField, TextareaField, TextInputField, toaster} from 'evergreen-ui';
 import {categories} from '../../consts';
 import {createQuote, isValid} from '../../helpers';
 
@@ -30,6 +30,7 @@ const QuoteCreate = ({history}) => {
 
   return (
       <Pane paddingY={40} display="flex" flexDirection="column">
+        <Heading marginBottom={10}>Create Quote</Heading>
         <SelectField
             label="Category"
             value={quote.category}
