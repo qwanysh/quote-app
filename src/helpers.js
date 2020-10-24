@@ -14,6 +14,10 @@ export const getQuotes = category => {
   });
 };
 
+export const deleteQuote = quiteId => {
+  return axios.delete(`/quotes/${quiteId}.json`);
+};
+
 export const isValid = quote => {
   const {author, text} = quote;
   return author.trim().length && text.trim().length;
