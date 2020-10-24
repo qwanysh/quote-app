@@ -1,11 +1,12 @@
 import React from 'react';
 import {BrowserRouter} from 'react-router-dom';
-import {Route, Switch} from 'react-router';
+import {Redirect, Route, Switch} from 'react-router';
 import Quotes from './Quotes/Quotes';
 import Navbar from '../components/Navbar/Navbar';
 import {Pane} from 'evergreen-ui';
 import QuoteCreate from './QuoteCreate/QuoteCreate';
 import QuoteEdit from './QuoteEdit/QuoteEdit';
+import Page404 from '../components/Page404/Page404';
 
 const App = () => {
   return (
@@ -25,6 +26,10 @@ const App = () => {
             <Route path="/quotes/:quoteId/edit" exact render={props => (
                 <QuoteEdit {...props}/>
             )}/>
+            <Route path="/404" exact component={Page404}/>
+            <Route path="/">
+              <Redirect to="/404"/>
+            </Route>
           </Switch>
         </Pane>
       </BrowserRouter>

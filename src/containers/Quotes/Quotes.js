@@ -16,15 +16,19 @@ const Quotes = props => {
 
   useEffect(() => {
     const {categoryId} = props.match.params;
+    const categoryObj = categories.find(({id}) => id === categoryId);
 
-    if (categoryId) {
-      setCategory(categories.find(({id}) => id === categoryId));
-    } else {
-      setCategory(null);
+    if (categoryId && !categoryObj) {
+      props.history.replace('/404');
     }
+
+    setCategory(categoryId ? categoryObj : null);
   }, [props.match.params]);
 
   useEffect(() => {
+    const {categoryId} = props.match.params;
+    if (categoryId && !category) return;
+
     setSpinner(true);
     getQuotes(category).then(quotes => {
       setSpinner(false);
