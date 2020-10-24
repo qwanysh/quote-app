@@ -10,6 +10,10 @@ const Quotes = props => {
   const [quotes, setQuotes] = useState([]);
   const [category, setCategory] = useState(null);
 
+  const deleleQuoteHandler = quoteId => {
+    setQuotes(quotes.filter(({id}) => id !== quoteId));
+  };
+
   useEffect(() => {
     const {categoryId} = props.match.params;
 
@@ -31,9 +35,11 @@ const Quotes = props => {
   return (
       <Pane paddingY={40} display="flex">
         <CategoryList/>
-        <Pane padding={10} flexGrow={1}>
+        <Pane padding={10} paddingRight={0} flexGrow={1}>
           <Heading marginBottom={10}>{category ? category.name : 'All'}</Heading>
-          {spinner ? <Spinner size={40} marginX="auto"/> : <QuoteList quotes={quotes}/>}
+          {spinner ? <Spinner size={40} marginX="auto"/> : (
+              <QuoteList quotes={quotes} onDelete={deleleQuoteHandler}/>
+          )}
         </Pane>
       </Pane>
   );
