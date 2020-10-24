@@ -36,7 +36,7 @@ const QuoteEdit = props => {
   }, [props.match.params]);
 
   return (
-      <Pane paddingY={40} display="flex" flexDirection="column">
+      <Pane paddingY={40} display="flex" flexDirection="column" className="fadeIn">
         <Heading marginBottom={10}>Edit Quote</Heading>
         <SelectField
             label="Category"

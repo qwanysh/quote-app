@@ -15,7 +15,8 @@ const QuoteCard = ({quote, onDelete}) => {
   };
 
   return (
-      <Pane display="flex" flexDirection="column" justifyContent="space-between" border marginBottom={10}>
+      <Pane display="flex" flexDirection="column" justifyContent="space-between" border marginBottom={10}
+            className="fadeIn">
         <Text padding={10}>{quote.text}</Text>
         <Pane borderTop padding={10} display="flex" justifyContent="flex-end" alignItems="center">
           <Heading size={100} marginRight="auto">{quote.author}</Heading>

@@ -33,7 +33,7 @@ const Quotes = props => {
   }, [category]);
 
   return (
-      <Pane paddingY={40} display="flex">
+      <Pane paddingY={40} display="flex" className="fadeIn">
         <CategoryList/>
         <Pane padding={10} paddingRight={0} flexGrow={1}>
           <Heading marginBottom={10}>{category ? category.name : 'All'}</Heading>
