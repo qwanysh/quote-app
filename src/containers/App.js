@@ -10,7 +10,7 @@ import Page404 from '../components/Page404/Page404';
 
 const App = () => {
   return (
-      <BrowserRouter>
+      <BrowserRouter basename="/quote-app/">
         <Pane maxWidth={640} paddingX={20} marginX="auto">
           <Navbar/>
           <Switch>
