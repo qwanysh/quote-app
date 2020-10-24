@@ -6,7 +6,7 @@ import {createQuote, isValid} from '../../helpers';
 const QuoteCreate = ({history}) => {
   const [spinner, setSpinner] = useState(false);
   const [quote, setQuote] = useState({
-    category: '',
+    category: categories[0].id,
     author: '',
     text: '',
   });
@@ -32,7 +32,7 @@ const QuoteCreate = ({history}) => {
       <Pane paddingY={40} display="flex" flexDirection="column">
         <SelectField
             label="Category"
-            defaultValue={quote.category}
+            value={quote.category}
             name="category"
             onChange={changeHandler}
         >
@@ -62,6 +62,7 @@ const QuoteCreate = ({history}) => {
             onClick={submitHandler}
             isLoading={spinner}
             disabled={!isValid(quote)}
+            intent="success"
         >Save</Button>
       </Pane>
   );
