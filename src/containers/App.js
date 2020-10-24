@@ -4,6 +4,7 @@ import {Route, Switch} from 'react-router';
 import QuoteList from './QuoteList/QuoteList';
 import Navbar from '../components/Navbar/Navbar';
 import {Pane} from 'evergreen-ui';
+import QuoteCreate from './QuoteCreate/QuoteCreate';
 
 const App = () => {
   return (
@@ -11,7 +12,8 @@ const App = () => {
         <Pane maxWidth={640} paddingX={20} marginX="auto">
           <Navbar/>
           <Switch>
-            <Route path="/" component={QuoteList}/>
+            <Route path="/" exact component={QuoteList}/>
+            <Route path="/add-quote" exact component={QuoteCreate}/>
           </Switch>
         </Pane>
       </BrowserRouter>
