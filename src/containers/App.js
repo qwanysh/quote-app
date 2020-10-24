@@ -5,6 +5,7 @@ import Quotes from './Quotes/Quotes';
 import Navbar from '../components/Navbar/Navbar';
 import {Pane} from 'evergreen-ui';
 import QuoteCreate from './QuoteCreate/QuoteCreate';
+import QuoteEdit from './QuoteEdit/QuoteEdit';
 
 const App = () => {
   return (
@@ -20,6 +21,9 @@ const App = () => {
             )}/>
             <Route path="/add-quote" exact render={props => (
                 <QuoteCreate {...props}/>
+            )}/>
+            <Route path="/quotes/:quoteId/edit" exact render={props => (
+                <QuoteEdit {...props}/>
             )}/>
           </Switch>
         </Pane>
