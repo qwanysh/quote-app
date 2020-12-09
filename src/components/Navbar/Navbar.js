@@ -1,5 +1,5 @@
 import React from 'react';
-import { Heading, Pane } from 'evergreen-ui';
+import { Heading, Pane, Button } from 'evergreen-ui';
 import { Link } from 'react-router-dom';
 
 const Navbar = () => {
@@ -13,18 +13,12 @@ const Navbar = () => {
     >
       <Heading>Quotes App</Heading>
       <Pane display="flex" alignItems="center">
-        <Pane
-          is={Link}
-          to="/"
-          color="inherit"
-          textDecoration="none"
-          marginRight={20}
-        >
+        <Button is={Link} to="/" appearance="minimal" paddingX={10}>
           Quotes
-        </Pane>
-        <Pane is={Link} to="/add-quote" color="inherit" textDecoration="none">
+        </Button>
+        <Button is={Link} to="/add-quote" appearance="minimal" paddingX={10}>
           Submit new Quote
-        </Pane>
+        </Button>
       </Pane>
     </Pane>
   );
