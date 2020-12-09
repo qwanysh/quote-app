@@ -1,5 +1,5 @@
 import axios from 'axios';
 
 export default axios.create({
-  baseURL: 'https://qwanysh-api.firebaseio.com',
+  baseURL: process.env.API_BASE_URL,
 });
