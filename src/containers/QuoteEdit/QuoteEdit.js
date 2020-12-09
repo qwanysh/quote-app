@@ -1,10 +1,18 @@
-import React, {useEffect, useState} from 'react';
-import {Button, Heading, Pane, SelectField, TextareaField, TextInputField, toaster} from 'evergreen-ui';
-import {categories} from '../../consts';
-import {getQuoteDetails, isValid, updateQuote} from '../../helpers';
-import {Link} from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import {
+  Button,
+  Heading,
+  Pane,
+  SelectField,
+  TextareaField,
+  TextInputField,
+  toaster,
+} from 'evergreen-ui';
+import { categories } from '../../consts';
+import { getQuoteDetails, isValid, updateQuote } from '../../helpers';
+import { Link } from 'react-router-dom';
 
-const QuoteEdit = props => {
+const QuoteEdit = (props) => {
   const [spinner, setSpinner] = useState(false);
   const [quote, setQuote] = useState({
     category: '',
@@ -12,8 +20,8 @@ const QuoteEdit = props => {
     text: '',
   });
 
-  const changeHandler = event => {
-    const quoteCopy = {...quote};
+  const changeHandler = (event) => {
+    const quoteCopy = { ...quote };
     quoteCopy[event.target.name] = event.target.value;
     setQuote(quoteCopy);
   };
@@ -29,56 +37,60 @@ const QuoteEdit = props => {
   };
 
   useEffect(() => {
-    const {quoteId} = props.match.params;
-    getQuoteDetails(quoteId).then(quote => {
+    const { quoteId } = props.match.params;
+    getQuoteDetails(quoteId).then((quote) => {
       setQuote(quote);
     });
   }, [props.match.params]);
 
   return (
-      <Pane paddingY={40} display="flex" flexDirection="column" className="fadeIn">
-        <Heading marginBottom={10}>Edit Quote</Heading>
-        <SelectField
-            label="Category"
-            value={quote.category}
-            name="category"
-            onChange={changeHandler}
+    <Pane
+      paddingY={40}
+      display="flex"
+      flexDirection="column"
+      className="fadeIn"
+    >
+      <Heading marginBottom={10}>Edit Quote</Heading>
+      <SelectField
+        label="Category"
+        value={quote.category}
+        name="category"
+        onChange={changeHandler}
+      >
+        {categories.map((category) => (
+          <option key={category.id} value={category.id}>
+            {category.name}
+          </option>
+        ))}
+      </SelectField>
+      <TextInputField
+        label="Author"
+        placeholder="Enter author name"
+        value={quote.author}
+        name="author"
+        onChange={changeHandler}
+      />
+      <TextareaField
+        label="Quote text"
+        placeholder="Enter quote text"
+        value={quote.text}
+        name="text"
+        onChange={changeHandler}
+      />
+      <Pane display="flex" justifyContent="flex-end" alignItems="center">
+        <Button is={Link} to="/" marginRight={10}>
+          Back to quotes
+        </Button>
+        <Button
+          onClick={submitHandler}
+          isLoading={spinner}
+          disabled={!isValid(quote)}
+          intent="success"
         >
-          {categories.map(category => (
-              <option
-                  key={category.id}
-                  value={category.id}
-              >{category.name}</option>
-          ))}
-        </SelectField>
-        <TextInputField
-            label="Author"
-            placeholder="Enter author name"
-            value={quote.author}
-            name="author"
-            onChange={changeHandler}
-        />
-        <TextareaField
-            label="Quote text"
-            placeholder="Enter quote text"
-            value={quote.text}
-            name="text"
-            onChange={changeHandler}
-        />
-        <Pane display="flex" justifyContent="flex-end" alignItems="center">
-          <Button
-              is={Link}
-              to="/"
-              marginRight={10}
-          >Back to quotes</Button>
-          <Button
-              onClick={submitHandler}
-              isLoading={spinner}
-              disabled={!isValid(quote)}
-              intent="success"
-          >Save</Button>
-        </Pane>
+          Save
+        </Button>
       </Pane>
+    </Pane>
   );
 };
 
