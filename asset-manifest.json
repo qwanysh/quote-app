@@ -1,22 +1,20 @@
 {
   "files": {
-    "main.css": "/quote-app/static/css/main.21ec7dfb.chunk.css",
-    "main.js": "/quote-app/static/js/main.37183405.chunk.js",
-    "main.js.map": "/quote-app/static/js/main.37183405.chunk.js.map",
-    "runtime-main.js": "/quote-app/static/js/runtime-main.8d3fb254.js",
-    "runtime-main.js.map": "/quote-app/static/js/runtime-main.8d3fb254.js.map",
-    "static/js/2.cc66b0aa.chunk.js": "/quote-app/static/js/2.cc66b0aa.chunk.js",
-    "static/js/2.cc66b0aa.chunk.js.map": "/quote-app/static/js/2.cc66b0aa.chunk.js.map",
-    "static/js/3.ae2eae5f.chunk.js": "/quote-app/static/js/3.ae2eae5f.chunk.js",
-    "static/js/3.ae2eae5f.chunk.js.map": "/quote-app/static/js/3.ae2eae5f.chunk.js.map",
+    "main.css": "/quote-app/static/css/main.aaa7b308.chunk.css",
+    "main.js": "/quote-app/static/js/main.f0a30770.chunk.js",
+    "main.js.map": "/quote-app/static/js/main.f0a30770.chunk.js.map",
+    "runtime-main.js": "/quote-app/static/js/runtime-main.ccfaef1a.js",
+    "runtime-main.js.map": "/quote-app/static/js/runtime-main.ccfaef1a.js.map",
+    "static/js/2.f92ef876.chunk.js": "/quote-app/static/js/2.f92ef876.chunk.js",
+    "static/js/2.f92ef876.chunk.js.map": "/quote-app/static/js/2.f92ef876.chunk.js.map",
     "index.html": "/quote-app/index.html",
-    "static/css/main.21ec7dfb.chunk.css.map": "/quote-app/static/css/main.21ec7dfb.chunk.css.map",
-    "static/js/2.cc66b0aa.chunk.js.LICENSE.txt": "/quote-app/static/js/2.cc66b0aa.chunk.js.LICENSE.txt"
+    "static/css/main.aaa7b308.chunk.css.map": "/quote-app/static/css/main.aaa7b308.chunk.css.map",
+    "static/js/2.f92ef876.chunk.js.LICENSE.txt": "/quote-app/static/js/2.f92ef876.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.8d3fb254.js",
-    "static/js/2.cc66b0aa.chunk.js",
-    "static/css/main.21ec7dfb.chunk.css",
-    "static/js/main.37183405.chunk.js"
+    "static/js/runtime-main.ccfaef1a.js",
+    "static/js/2.f92ef876.chunk.js",
+    "static/css/main.aaa7b308.chunk.css",
+    "static/js/main.f0a30770.chunk.js"
   ]
 }
